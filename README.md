@@ -1,2 +1,2 @@
 ### Hexlet tests and linter status:
-https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_FILE_PATH>/badge.svg
+![hexlet-check](https://github.com/Wesrtty/backend-project-lvl1/workflows/hexlet-check/badge.svg?branch=main)
