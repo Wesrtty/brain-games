@@ -1,2 +1,2 @@
 ### Hexlet tests and linter status:
-![Actions Status](/workflows/hexlet-check/badge.svg)
+![example branch parameter](https://github.com/Wesrtty/backend-project-lvl1/workflows//blob/main/bin/brain-games.js/badge.svg?branch=main)
