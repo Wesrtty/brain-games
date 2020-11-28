@@ -1,0 +1,24 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "![Actions Status](/workflows/hexlet-check/badge.svg)",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wesrtty/backend-project-lvl1.git"
+  },
+  "author": "Nikita Novikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wesrtty/backend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Wesrtty/backend-project-lvl1#readme",
+  "dependencies": {}
+}
