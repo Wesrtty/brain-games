@@ -1,9 +1,5 @@
 #!/usr/bin/env node
-/* import/extensions: "off" */
+import { inputUserName, showGreeting, showGreetingByUserName } from '../src/cli.js';
 
-import setUserName from '../src/cli.js';
-
-console.log('Welcome to the Brain Games!');
-
-const userName = setUserName();
-console.log(`Hello, ${userName}!`);
+showGreeting();
+showGreetingByUserName(inputUserName());
