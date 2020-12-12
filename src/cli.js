@@ -7,5 +7,3 @@ const getUserName = () => {
 
     return userName;
 };
-
-export default getUserName;
