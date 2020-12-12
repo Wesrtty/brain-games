@@ -1,32 +1,23 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
-const getRandomInt = () => Math.floor(Math.random() * Math.floor(100));
+const getRandomInt = () => Math.ceil(Math.random() * Math.floor(100));
+
+const isInputCorrect = (input) => ['yes', 'no'].includes(input);
 
 const isEven = (number) => number % 2 === 0;
 
-const setAnswer = () => readlineSync.question('Your answer: ');
+const checkUserResponse = (number, input) => isEven(number) === Boolean(input === 'yes' ? 1 : 0);
 
-export default () => {
-  const correctAnswerToWin = 3;
+export const startGame= () => {
+  let result = true;
+  const number = getRandomInt();
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log(`Question: ${number}`);
+  const input = readlineSync.question('Your answer: ');
 
-  for (let attempt = 1; attempt <= correctAnswerToWin; attempt += 1) {
-    const randomNumber = getRandomInt();
-
-    console.log(`Question: ${randomNumber}`);
-    const answer = String(setAnswer());
-
-    if (!['yes', 'no'].includes(answer)) {
-      return false;
-    }
-
-    if (isEven(randomNumber) === Boolean(answer === 'yes' ? 1 : 0)) {
-      console.log('Correct!');
-    } else {
-      return false;
-    }
+  if (!isInputCorrect(input) || !checkUserResponse(number, input)) {
+    result = false;
   }
 
-  return true;
+  return [input === 'yes' ? 'no' : 'yes', input, result];
 };
