@@ -10,4 +10,8 @@
 
 <a href="https://asciinema.org/a/ooY0S3Ubnl6skloqICX0qmlc5" target="_blank"><img src="https://asciinema.org/a/ooY0S3Ubnl6skloqICX0qmlc5.svg" /></a>
 
+# Игра "Арифметическая прогрессия"
+
+<a href="https://asciinema.org/a/AwG6sxHCYtHdLWZhxZg4S9dnw" target="_blank"><img src="https://asciinema.org/a/AwG6sxHCYtHdLWZhxZg4S9dnw.svg" /></a>
+
 ![hexlet-check](https://github.com/Wesrtty/backend-project-lvl1/workflows/hexlet-check/badge.svg?branch=main)
