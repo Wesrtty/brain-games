@@ -2,6 +2,7 @@ import * as brainEven from './even.js';
 import * as brainCalc from './calc.js';
 import * as brainGcd from './gcd.js';
 import * as brainProgression from './progression.js';
+import * as brainPrime from './prime.js';
 import getUserName from './cli.js';
 
 const getGameByName = (gameName) => {
@@ -14,6 +15,8 @@ const getGameByName = (gameName) => {
           return brainGcd;
       case 'brain-progression':
           return brainProgression
+      case 'brain-prime':
+          return brainPrime;
       default:
           console.log(`${gameName} is not found.`);
   }
