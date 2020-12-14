@@ -14,4 +14,8 @@
 
 <a href="https://asciinema.org/a/AwG6sxHCYtHdLWZhxZg4S9dnw" target="_blank"><img src="https://asciinema.org/a/AwG6sxHCYtHdLWZhxZg4S9dnw.svg" /></a>
 
+# Игра "Простое ли число?"
+
+<a href="https://asciinema.org/a/Tj6hu4nVRuueRmxN2KJIdvsvE" target="_blank"><img src="https://asciinema.org/a/Tj6hu4nVRuueRmxN2KJIdvsvE.svg" /></a>
+
 ![hexlet-check](https://github.com/Wesrtty/backend-project-lvl1/workflows/hexlet-check/badge.svg?branch=main)
