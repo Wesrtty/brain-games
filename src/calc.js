@@ -1,12 +1,9 @@
 import readlineSync from "readline-sync";
+import { getRandomInt, isInt } from './../utils/utils.js';
 
 const operations = ['+', '-', '*'];
 
-const getRandomInt = () => Math.ceil(Math.random() * Math.floor(50));
-
 const getRandomOperation = (operations) => operations[Math.ceil(Math.random() * operations.length - 1)];
-
-const isInputCorrect = (input) => typeof input === 'number';
 
 const calculate = (number1, operation, number2) => {
     switch (operation) {
@@ -22,16 +19,19 @@ const calculate = (number1, operation, number2) => {
     }
 };
 
-export const startGame = () => {
+export const showGreeting = () => console.log('What is the result of the expression?');
+
+export const start = () => {
     let result = true;
-    const [ number1, operation, number2 ] = [ getRandomInt(), getRandomOperation(operations), getRandomInt() ];
+    const [ number1, operation, number2 ] = [ getRandomInt(50), getRandomOperation(operations), getRandomInt(50) ];
 
     console.log(`Question: ${number1} ${operation} ${number2}`);
     const input = readlineSync.question('Your answer: ');
 
     const resultOperation = calculate(number1, operation, number2);
+    const inputInt = Number(input);
 
-    if (!isInputCorrect(Number(input)) || Number(input) !== resultOperation) {
+    if (!isInt(inputInt) || inputInt !== resultOperation) {
         result = false;
     }
 
