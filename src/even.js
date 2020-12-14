@@ -8,7 +8,9 @@ const isEven = (number) => number % 2 === 0;
 
 const checkUserResponse = (number, input) => isEven(number) === Boolean(input === 'yes' ? 1 : 0);
 
-export const startGame= () => {
+export const showGreeting = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+export const start= () => {
   let result = true;
   const number = getRandomInt();
 
