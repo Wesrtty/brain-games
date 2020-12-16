@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import { getRandomInt, isInt } from './../utils/utils.js';
+import { getRandomInt, isInt } from '../../utils/utils.js';
 
 const generateNumbers = (maxSize = 5) => {
     const numbers = [];

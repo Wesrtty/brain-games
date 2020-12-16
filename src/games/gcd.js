@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import { getRandomInt, isInt } from './../utils/utils.js';
+import { getRandomInt, isInt } from '../../utils/utils.js';
 
 const getGcd = (num1, num2) => {
     let count = 2;

@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import { getRandomInt, isInt } from './../utils/utils.js';
+import { getRandomInt, isInt } from '../../utils/utils.js';
 
 const isPrime = (num) => {
     for (let i = 2; i <= num / 2; i += 1) {

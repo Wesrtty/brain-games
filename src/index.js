@@ -1,45 +1,44 @@
-import * as brainEven from './even.js';
-import * as brainCalc from './calc.js';
-import * as brainGcd from './gcd.js';
-import * as brainProgression from './progression.js';
-import * as brainPrime from './prime.js';
-import getUserName from './cli.js';
+import * as brainEven from './games/even.js';
+import * as brainCalc from './games/calc.js';
+import * as brainGcd from './games/gcd.js';
+import * as brainProgression from './games/progression.js';
+import * as brainPrime from './games/prime.js';
+import setUserName from './games/cli.js';
 
-const getGameByName = (gameName) => {
-  switch (gameName) {
-      case 'brain-even':
-          return brainEven;
-      case 'brain-calc':
-          return brainCalc;
-      case 'brain-gcd':
-          return brainGcd;
-      case 'brain-progression':
-          return brainProgression
-      case 'brain-prime':
-          return brainPrime;
-      default:
-          console.log(`${gameName} is not found.`);
-  }
-};
+export default (gameName) => {
+    const game = getModuleByGameName(gameName);
+    const username = setUserName();
+    const attemptsCount = 3;
 
-const run = (gameName) => {
-    const game = getGameByName(gameName);
-    const userName = getUserName();
-    const attempts = 3;
+    const rulesGame = game.getRules();
+    console.log(rulesGame);
 
-    game.showGreeting();
-
-    for (let attempt = 0; attempt < attempts; attempt += 1) {
-        const [ correct, incorrect, result ] = game.start();
-
-        if (!result) {
-            console.log(`'${incorrect}' is wrong answer ;(. Correct answer was '${correct}'.`);
+    for (let attempt = 0; attempt < attemptsCount; attempt += 1) {
+        const [ correctAnswer, incorrectAnswer, resultGame ] = game.run();
+        if (!isVictory(resultGame)) {
+            console.log(`'${incorrectAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
             return;
         }
         console.log('Correct!');
     }
-
-    console.log(`Congratulations, ${userName}!`);
+    console.log(`Congratulations, ${username}!`);
 };
 
-export default run;
+const isVictory = (resultGame) => (resultGame);
+
+const getModuleByGameName = (gameName) => {
+    switch (gameName) {
+        case 'brain-even':
+            return brainEven;
+        case 'brain-calc':
+            return brainCalc;
+        case 'brain-gcd':
+            return brainGcd;
+        case 'brain-progression':
+            return brainProgression
+        case 'brain-prime':
+            return brainPrime;
+        default:
+            console.log(`${gameName} is not found.`);
+    }
+};
