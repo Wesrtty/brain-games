@@ -1,4 +1,4 @@
-![example workflow name](https://github.com/actions/backend-project-lvl1/workflows/.github/workflows/superlinter.yml/badge.svg)
+![example workflow name](https://github.com/Wesrtty/backend-project-lvl1/workflows/.github/workflows/superlinter.yml/badge.svg)
 
 # Игра: "Проверка на чётность"
 
