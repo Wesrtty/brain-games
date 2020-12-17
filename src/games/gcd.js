@@ -7,9 +7,8 @@ const gcd = (num1, num2) => {
   if (num2) {
     return gcd(num2, num1 % num2);
   }
-  else {
-    return Math.abs(num1);
-  }
+
+  return Math.abs(num1);
 };
 
 export const run = () => {
