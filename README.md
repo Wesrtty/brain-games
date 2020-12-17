@@ -1,3 +1,5 @@
+https://github.com/actions/backend-project-lvl1/workflows/.github/workflows/superlinter.yml/badge.svg
+
 # Игра: "Проверка на чётность"
 
 <a href="https://asciinema.org/a/X9dS9c50RH8VhanYgWoLcWVIx" target="_blank"><img src="https://asciinema.org/a/X9dS9c50RH8VhanYgWoLcWVIx.svg" /></a>
