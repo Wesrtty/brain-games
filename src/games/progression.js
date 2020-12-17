@@ -16,9 +16,7 @@ const generateNumbers = (maxSize = 5) => {
   return numbers;
 };
 
-const hideRandomNumber = (numbers) => {
-  return getRandomInt(numbers.length - 1);
-};
+const hideRandomNumber = (numbers) => getRandomInt(numbers.length - 1);
 
 export const run = () => {
   let resultGame = true;
