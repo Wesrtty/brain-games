@@ -1,5 +1,5 @@
-import { showQuestion, setUserInput } from '../../utils/interaction';
-import { getRandomInt } from "../../utils/utils";
+import { showQuestion, setUserInput } from '../../utils/interaction.js';
+import { getRandomInt } from "../../utils/utils.js";
 
 export const run= () => {
   let resultGame = true;

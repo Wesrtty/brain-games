@@ -1,4 +1,4 @@
-import { showQuestion, setUserInput } from '../../utils/interaction';
+import { showQuestion, setUserInput } from '../../utils/interaction.js';
 import { getRandomInt, isInt } from '../../utils/utils.js';
 
 export const run = () => {
