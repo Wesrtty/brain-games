@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import greetUser from '../src/games/cli.js';
+import setUserName from '../src/cli.js';
 
-greetUser();
+setUserName();
