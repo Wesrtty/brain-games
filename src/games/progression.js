@@ -29,7 +29,7 @@ export const run = () => {
   const numbersWithHiddenNumber = numbers;
   numbersWithHiddenNumber[indexHiddenNumber] = '..';
 
-  showQuestion(numbersWithHiddenNumber);
+  showQuestion(numbersWithHiddenNumber.join(' '));
   const inputStr = setUserInput();
   const inputInt = Number(inputStr);
 
