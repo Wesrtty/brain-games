@@ -24,7 +24,7 @@ const getResultMathOperation = (number1, number2, operation) => {
 
 export const run = () => {
   let resultGame = true;
-  const [number1, number2] = [getRandomInt(50), getRandomInt(50)];
+  const [number1, number2] = [getRandomInt(20), getRandomInt(30)];
   const operation = getRandomOperationSign();
 
   showQuestion(`${number1} ${operation} ${number2}`);
