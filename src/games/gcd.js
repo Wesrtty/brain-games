@@ -3,15 +3,12 @@ import { getRandomInt, isInt } from '../../utils/utils.js';
 
 export const getRules = () => 'Find the greatest common divisor of given numbers.';
 
-const getLeastCommonDivisor = (num1, num2) => {
-  let count = 2;
-  while (count <= (num1 + num2) / 2) {
-    if (num1 % count === 0 && num2 % count === 0) {
-      return count;
-    }
-    count += 1;
+const gcd = (num1, num2) => {
+  if (num2) {
+    return gcd(num2, num1 % num2);
+  } else {
+    return Math.abs(num1);
   }
-  return 1;
 };
 
 export const run = () => {
@@ -21,7 +18,7 @@ export const run = () => {
   showQuestion(`${number1} ${number2}`);
   const inputStr = Number(setUserInput());
   const inputInt = Number(inputStr);
-  const leastCommonDivisor = getLeastCommonDivisor(number1, number2);
+  const leastCommonDivisor = gcd(number1, number2);
 
   if (!isInt(inputInt) || inputInt !== leastCommonDivisor) {
     resultGame = false;
