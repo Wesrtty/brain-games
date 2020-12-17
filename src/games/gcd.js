@@ -6,7 +6,8 @@ export const getRules = () => 'Find the greatest common divisor of given numbers
 const gcd = (num1, num2) => {
   if (num2) {
     return gcd(num2, num1 % num2);
-  } else {
+  }
+  else {
     return Math.abs(num1);
   }
 };
