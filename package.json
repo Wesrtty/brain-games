@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/Wesrtty/backend-project-lvl1#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "standard": "^16.0.3"
   },
   "devDependencies": {
     "eslint": "^7.14.0",
