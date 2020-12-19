@@ -38,7 +38,7 @@ export default (gameName) => {
     if (!isVictory(resultGame)) {
       console.log(`'${incorrectAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`)
       console.log(`Let's try again, ${username}!`)
-      return
+      return;
     }
     console.log('Correct!')
   }
