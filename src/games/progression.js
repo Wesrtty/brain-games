@@ -1,38 +1,43 @@
-import { showQuestion, setUserInput } from '../../utils/interaction.js'
-import { getRandomInt, isInt } from '../../utils/utils.js'
+import { getRandomInt, isInt } from '../../utils/utils.js';
 
-export const getRules = () => 'What number is missing in the progression?'
+export const showRules = () => console.log('What number is missing in the progression?');
 
-const generateNumbers = (maxSize = 5) => {
-  const numbers = []
-  const minSize = 5
-  let sumNumbers = 0
-  const diffBetweenNumbers = getRandomInt(10)
+const generateSequenceNumbers = (maxSize = 5) => {
+  const numbers = [];
+  const minSize = 5;
+  let sumNumbers = 0;
+  const diffBetweenNumbers = getRandomInt(10);
 
   for (let index = 0; index < (minSize + maxSize); index += 1) {
-    sumNumbers += diffBetweenNumbers
-    numbers.push(sumNumbers)
+    sumNumbers += diffBetweenNumbers;
+    numbers.push(sumNumbers);
   }
-  return numbers
-}
+  return numbers;
+};
 
-const hideRandomNumber = (numbers) => getRandomInt(numbers.length - 1)
+const getMissingNumber = (numbers) => {
+  let difference = 0;
+  let indexHiddenNumber = 0;
 
-export const run = () => {
-  let resultGame = true
-  const numbers = generateNumbers(7)
+  for (let index = 0; index < numbers.length - 1; index += 1) {
+    const differenceBetweenNumbers = numbers[index + 1] - numbers[index];
+    difference = differenceBetweenNumbers >= difference ? differenceBetweenNumbers : difference;
 
-  const indexHiddenNumber = hideRandomNumber(numbers)
-  const hiddenNumber = numbers[indexHiddenNumber]
-  const numbersWithHiddenNumber = numbers
-  numbersWithHiddenNumber[indexHiddenNumber] = '..'
-
-  showQuestion(numbersWithHiddenNumber.join(' '))
-  const inputStr = setUserInput()
-  const inputInt = Number(inputStr)
-
-  if (!isInt(inputInt) || inputInt !== hiddenNumber) {
-    resultGame = false
+    if (numbers[index] === '..') {
+      indexHiddenNumber = index + 1;
+    }
   }
-  return [hiddenNumber, inputStr, resultGame]
-}
+  return difference * indexHiddenNumber;
+};
+
+export const getTask = () => {
+  const numbers = generateSequenceNumbers(8);
+  numbers[getRandomInt(numbers.length - 1)] = '..';
+  return numbers;
+};
+
+export const getRightAnswer = (task) => getMissingNumber(task);
+
+export const isValid = (input) => isInt(Number(input));
+
+export const isVictory = (task, input) => getMissingNumber(task) === Number(input);

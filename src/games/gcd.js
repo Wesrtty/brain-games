@@ -1,28 +1,18 @@
-import { showQuestion, setUserInput } from '../../utils/interaction.js'
-import { getRandomInt, isInt } from '../../utils/utils.js'
+import { getRandomInt, isInt } from '../../utils/utils.js';
 
-export const getRules = () => 'Find the greatest common divisor of given numbers.'
+export const showRules = () => console.log('Find the greatest common divisor of given numbers.');
 
-const gcd = (num1, num2) => {
+const getLeastCommonDivisor = (num1, num2) => {
   if (num2) {
-    return gcd(num2, num1 % num2)
+    return getLeastCommonDivisor(num2, num1 % num2);
   }
+  return Math.abs(num1);
+};
 
-  return Math.abs(num1)
-}
+export const getTask = () => [getRandomInt(50), getRandomInt(50)];
 
-export const run = () => {
-  let resultGame = true
-  const [number1, number2] = [getRandomInt(50), getRandomInt(50)]
+export const getRightAnswer = (task) => getLeastCommonDivisor(...task);
 
-  showQuestion(`${number1} ${number2}`)
-  const inputStr = Number(setUserInput())
-  const inputInt = Number(inputStr)
-  const leastCommonDivisor = gcd(number1, number2)
+export const isValid = (input) => isInt(Number(input));
 
-  if (!isInt(inputInt) || inputInt !== leastCommonDivisor) {
-    resultGame = false
-  }
-
-  return [leastCommonDivisor, inputStr, resultGame]
-}
+export const isVictory = (task, input) => getLeastCommonDivisor(...task) === Number(input);

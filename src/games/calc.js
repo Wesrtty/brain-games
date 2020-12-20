@@ -1,40 +1,30 @@
-import { showQuestion, setUserInput } from '../../utils/interaction.js'
-import { getRandomInt, isInt } from '../../utils/utils.js'
+import { getRandomInt, isInt } from '../../utils/utils.js';
 
-export const getRules = () => 'What is the result of the expression?'
+export const showRules = () => console.log('What is the result of the expression?');
 
-const getRandomOperationSign = () => {
-  const operations = ['+', '-', '*']
-  return operations[Math.ceil(Math.random() * operations.length - 1)]
-}
+const getRandomSign = () => {
+  const operations = ['+', '-', '*'];
+  return operations[Math.ceil(Math.random() * operations.length - 1)];
+};
 
-const getResultMathOperation = (number1, number2, operation) => {
+const getResultMathOperation = (number1, operation, number2) => {
   switch (operation) {
     case '+':
-      return number1 + number2
+      return number1 + number2;
     case '-':
-      return number1 - number2
+      return number1 - number2;
     case '*':
-      return number1 * number2
+      return number1 * number2;
     default:
-      console.log(`${operation} is not found.`)
+      console.log(`${operation} is not found.`);
   }
-  return null
-}
+  return null;
+};
 
-export const run = () => {
-  let resultGame = true
-  const [number1, number2] = [getRandomInt(20), getRandomInt(30)]
-  const operation = getRandomOperationSign()
+export const getTask = () => [getRandomInt(40), getRandomSign(), getRandomInt(40)];
 
-  showQuestion(`${number1} ${operation} ${number2}`)
-  const inputStr = setUserInput()
-  const inputInt = Number(inputStr)
-  const resultMathOperation = getResultMathOperation(number1, number2, operation)
+export const getRightAnswer = (task) => getResultMathOperation(...task);
 
-  if (!isInt(inputInt) || inputInt !== resultMathOperation) {
-    resultGame = false
-  }
+export const isValid = (input) => isInt(Number(input));
 
-  return [resultMathOperation, inputStr, resultGame]
-}
+export const isVictory = (task, input) => getResultMathOperation(...task) === Number(input);
