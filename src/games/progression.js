@@ -17,9 +17,9 @@ const generateSequenceNumbers = (maxSize = 5) => {
 
 const getMissingNumber = (numbers) => {
   let difference = 1;
-  let indexHiddenNumber = 0;
+  let indexHiddenNumber = 1;
 
-  for (let index = 0; index < numbers.length - 1; index += 1) {
+  for (let index = 0; index < numbers.length; index += 1) {
     const differenceBetweenNumbers = numbers[index + 1] - numbers[index];
     difference = differenceBetweenNumbers >= difference ? differenceBetweenNumbers : difference;
 
