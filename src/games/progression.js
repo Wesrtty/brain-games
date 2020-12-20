@@ -16,7 +16,7 @@ const generateSequenceNumbers = (maxSize = 5) => {
 };
 
 const getMissingNumber = (numbers) => {
-  let difference = 0;
+  let difference = 1;
   let indexHiddenNumber = 0;
 
   for (let index = 0; index < numbers.length - 1; index += 1) {
