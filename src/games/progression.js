@@ -23,15 +23,10 @@ const getMissingNumber = (numbers) => {
     const differenceBetweenNumbers = numbers[index + 1] - numbers[index]
     difference = differenceBetweenNumbers >= difference ? differenceBetweenNumbers : difference
 
-    console.log(difference)
-
     if (numbers[index] === '..') {
       indexHiddenNumber = index + 1
     }
   }
-
-  console.log(difference * indexHiddenNumber)
-
   return difference * indexHiddenNumber
 }
 
