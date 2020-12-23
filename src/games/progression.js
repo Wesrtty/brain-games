@@ -1,4 +1,4 @@
-import { getRandomInt, isInt } from '../../utils/utils.js';
+import { getRandomInt } from '../utils.js';
 
 export const showRules = () => console.log('What number is missing in the progression?');
 
@@ -6,7 +6,7 @@ const generateSequenceNumbers = (maxSize = 5) => {
   const numbers = [];
   const minSize = 5;
   let sumNumbers = 0;
-  const diffBetweenNumbers = getRandomInt(10);
+  const diffBetweenNumbers = getRandomInt(1, 15);
 
   for (let index = 0; index < (minSize + maxSize); index += 1) {
     sumNumbers += diffBetweenNumbers;
@@ -32,12 +32,11 @@ const getMissingNumber = (numbers) => {
 
 export const getTask = () => {
   const numbers = generateSequenceNumbers(8);
-  numbers[getRandomInt(numbers.length - 1)] = '..';
-  return numbers;
+  numbers[getRandomInt(0, numbers.length - 1)] = '..';
+  return numbers.join(' ');
 };
 
-export const getRightAnswer = (task) => getMissingNumber(task);
-
-export const isValid = (input) => isInt(Number(input));
-
-export const isVictory = (task, input) => getMissingNumber(task) === Number(input);
+export const getCorrectAnswer = (task) => {
+  const numbers = task.split(' ');
+  return getMissingNumber(numbers).toString();
+};

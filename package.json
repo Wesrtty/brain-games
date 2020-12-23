@@ -26,13 +26,11 @@
   },
   "homepage": "https://github.com/Wesrtty/backend-project-lvl1#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10",
-    "standard": "^16.0.3"
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^7.14.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "standart": "^6.1.0"
+    "eslint-plugin-import": "^2.22.1"
   }
 }

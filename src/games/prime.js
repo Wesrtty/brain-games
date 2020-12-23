@@ -1,4 +1,4 @@
-import { getRandomInt } from '../../utils/utils.js';
+import { getRandomInt } from '../utils.js';
 
 export const showRules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
@@ -11,8 +11,6 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-export const getTask = () => [getRandomInt(100)];
+export const getTask = () => getRandomInt(0, 100);
 
-export const getRightAnswer = (task) => (isPrime(task) ? 'yes' : 'no');
-
-export const isVictory = (task, input) => isPrime(task) === (input === 'yes');
+export const getCorrectAnswer = (task) => isPrime(Number(task)) ? 'yes' : 'no';

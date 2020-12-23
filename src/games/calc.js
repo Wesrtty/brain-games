@@ -1,4 +1,4 @@
-import { getRandomInt, isInt } from '../../utils/utils.js';
+import { getRandomInt } from '../utils.js';
 
 export const showRules = () => console.log('What is the result of the expression?');
 
@@ -21,10 +21,9 @@ const getResultMathOperation = (number1, operation, number2) => {
   return null;
 };
 
-export const getTask = () => [getRandomInt(40), getRandomSign(), getRandomInt(40)];
+export const getTask = () => `${getRandomInt(0, 40)} ${getRandomSign()} ${getRandomInt(0, 40)}`;
 
-export const getRightAnswer = (task) => getResultMathOperation(...task);
-
-export const isValid = (input) => isInt(Number(input));
-
-export const isVictory = (task, input) => getResultMathOperation(...task) === Number(input);
+export const getCorrectAnswer = (task) => {
+  const [ num1, operation, num2 ] = task.split(' ');
+  return getResultMathOperation(Number(num1), operation, Number(num2)).toString();
+};
