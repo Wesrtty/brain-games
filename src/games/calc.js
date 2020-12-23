@@ -24,6 +24,6 @@ const getResultMathOperation = (number1, operation, number2) => {
 export const getTask = () => `${getRandomInt(0, 40)} ${getRandomSign()} ${getRandomInt(0, 40)}`;
 
 export const getCorrectAnswer = (task) => {
-  const [ num1, operation, num2 ] = task.split(' ');
+  const [num1, operation, num2] = task.split(' ');
   return getResultMathOperation(Number(num1), operation, Number(num2)).toString();
 };

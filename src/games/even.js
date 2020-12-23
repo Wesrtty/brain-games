@@ -8,4 +8,4 @@ const isEven = (number) => number % 2 === 0;
 
 export const getTask = () => getRandomInt(0, 100);
 
-export const getCorrectAnswer = (task) => isEven(Number(task)) ? 'yes' : 'no';
+export const getCorrectAnswer = (task) => (isEven(Number(task)) ? 'yes' : 'no');

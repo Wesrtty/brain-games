@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const attemptsCount = 3
+const attemptsCount = 3;
 
 export default (game) => {
   console.log('Welcome to the Brain Games!');

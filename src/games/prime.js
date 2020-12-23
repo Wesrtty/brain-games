@@ -13,4 +13,4 @@ const isPrime = (number) => {
 
 export const getTask = () => getRandomInt(0, 100);
 
-export const getCorrectAnswer = (task) => isPrime(Number(task)) ? 'yes' : 'no';
+export const getCorrectAnswer = (task) => (isPrime(Number(task)) ? 'yes' : 'no');
